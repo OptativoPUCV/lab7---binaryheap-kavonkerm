@@ -36,7 +36,7 @@ Heap* createHeap(){
   Heap* mont = (Heap*) malloc(sizeof(Heap));
   mont->size = 0;
   mont->capac = 3;
-  mont->heapArray = malloc(mont->capac , sizeof(heapElem));
+  mont->heapArray = calloc(mont->capac , sizeof(heapElem));
   
   return mont;
 }
