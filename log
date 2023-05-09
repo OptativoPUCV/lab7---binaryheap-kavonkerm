@@ -189,3 +189,17 @@ heap.c:39:8: error: unused variable ‘heapArray’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 3fadd62
+Tue 09 May 2023 11:13:05 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:20: error: invalid initializer
+   39 |   Heap heapArray = malloc(mont->capac * sizeof(heapElem));
+      |                    ^~~~~~
+heap.c:39:8: error: unused variable ‘heapArray’ [-Werror=unused-variable]
+   39 |   Heap heapArray = malloc(mont->capac * sizeof(heapElem));
+      |        ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0c8eb2c
