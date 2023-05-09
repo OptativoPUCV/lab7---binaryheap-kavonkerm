@@ -305,3 +305,9 @@ Tue 09 May 2023 11:30:01 PM UTC:
  tests:  2|2
 total_score: 20/70
 f09aa2b
+Tue 09 May 2023 11:30:46 PM UTC: 
+ heap.c | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+ tests:  2|2
+total_score: 20/70
+7b1da5b

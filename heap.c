@@ -22,22 +22,19 @@ void* heap_top(Heap* pq){
     return NULL;
   }
   return pq->heapArray[0].data;
-  return NULL;
 }
 
 void heap_push(Heap* pq, void* data, int priority){
+
+}
+
+
+void heap_pop(Heap* pq){
   if (pq->size == 0 || pq == NULL){
     return;
   }
   pq->heapArray[0] = pq->heapArray[pq->size - 1];
   pq->size--;
-
-  
-}
-
-
-void heap_pop(Heap* pq){
-
 }
 
 Heap* createHeap(){
