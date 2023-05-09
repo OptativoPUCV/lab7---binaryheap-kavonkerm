@@ -145,3 +145,18 @@ heap.c:39:13: error: unused variable ‘heapArray’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 6c672cd
+Tue 09 May 2023 11:10:58 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:38: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   39 |   heapElem* heapArray = malloc(mont->capacity * sizeof(int));
+      |                                      ^~~~~~~~
+      |                                      capac
+heap.c:39:13: error: unused variable ‘heapArray’ [-Werror=unused-variable]
+   39 |   heapElem* heapArray = malloc(mont->capacity * sizeof(int));
+      |             ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+095fe31
