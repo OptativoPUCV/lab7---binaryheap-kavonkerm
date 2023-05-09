@@ -130,3 +130,18 @@ heap.c:39:13: error: unused variable ‘heapArray’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 eb16736
+Tue 09 May 2023 11:10:51 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:32: error: ‘map’ undeclared (first use in this function)
+   39 |   heapElem* heapArray = malloc(map->capacity * sizeof(int));
+      |                                ^~~
+heap.c:39:32: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:39:13: error: unused variable ‘heapArray’ [-Werror=unused-variable]
+   39 |   heapElem* heapArray = malloc(map->capacity * sizeof(int));
+      |             ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6c672cd
