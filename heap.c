@@ -37,8 +37,6 @@ Heap* createHeap(){
   mont->capac = 3;
   mont->size = 0;
   heapElem* heapArray = (heapElem*) malloc(sizeof(heapElem));
-  int i;
-  mont->heapArray[i].priority = 3;
-  mont->heapArray[i].data = 0;
+  
   return mont;
 }
