@@ -25,10 +25,14 @@ void* heap_top(Heap* pq){
   return NULL;
 }
 
-
-
 void heap_push(Heap* pq, void* data, int priority){
+  if (pq->size == 0 || pq == NULL){
+    return;
+  }
+  pq->heapArray[0] = pq->heapArray[pq->size - 1];
+  pq->size--;
 
+  
 }
 
 
