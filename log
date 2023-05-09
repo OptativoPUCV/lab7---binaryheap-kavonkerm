@@ -33,3 +33,14 @@ heap.c:40:18: error: expected expression before ‘{’ token
       |                  ^
 Compilation failed
 01c794c
+Tue 09 May 2023 11:03:00 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:40:12: error: statement with no effect [-Werror=unused-value]
+   40 |   heapArray[0];
+      |   ~~~~~~~~~^~~
+cc1: all warnings being treated as errors
+Compilation failed
+04003ee
