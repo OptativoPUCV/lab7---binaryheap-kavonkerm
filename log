@@ -256,3 +256,17 @@ In file included from test.c:2:
       |              ^~~~~~
 Compilation failed
 84d8adc
+Tue 09 May 2023 11:16:57 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:21: error: too many arguments to function ‘malloc’
+   39 |   mont->heapArray = malloc(mont->capac , sizeof(heapElem));
+      |                     ^~~~~~
+In file included from test.c:2:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdlib.h:539:14: note: declared here
+  539 | extern void *malloc (size_t __size) __THROW __attribute_malloc__
+      |              ^~~~~~
+Compilation failed
+f329e42
