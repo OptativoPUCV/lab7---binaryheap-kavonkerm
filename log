@@ -311,3 +311,17 @@ Tue 09 May 2023 11:30:46 PM UTC:
  tests:  2|2
 total_score: 20/70
 7b1da5b
+Tue 09 May 2023 11:49:27 PM UTC: 
+ heap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:42:7: error: variable ‘max’ set but not used [-Werror=unused-but-set-variable]
+   42 |   int max = izq;
+      |       ^~~
+heap.c:39:7: error: unused variable ‘actual’ [-Werror=unused-variable]
+   39 |   int actual = 0;
+      |       ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e422900
