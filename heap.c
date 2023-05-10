@@ -55,7 +55,7 @@ void heap_pop(Heap* pq){
       max = izq;
     }
   }
-  if (pq->size <= pq->capacity / 2 && pq->capac > 3) {
+  if (pq->size <= pq->capacx / 2 && pq->capac > 3) {
     pq->capac /= 2;
     pq->heapArray = realloc(pq->heapArray, pq->capac *sizeof(heapElem));
   }
