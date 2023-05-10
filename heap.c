@@ -49,7 +49,7 @@ void heap_pop(Heap* pq){
       max = der;
     }
     if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
-      heapElem *harregloMont = pq->heapArray[actual];
+      heapElem harregloMont = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[max];
       pq->heapArray[max] = arregloMont;
       actual = max;

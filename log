@@ -429,3 +429,19 @@ heap.c:52:17: error: unused variable ‘harregloMont’ [-Werror=unused-variable
 cc1: all warnings being treated as errors
 Compilation failed
 6934f0d
+Wed 10 May 2023 08:52:38 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:54:28: error: ‘arregloMont’ undeclared (first use in this function); did you mean ‘harregloMont’?
+   54 |       pq->heapArray[max] = arregloMont;
+      |                            ^~~~~~~~~~~
+      |                            harregloMont
+heap.c:54:28: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:52:16: error: unused variable ‘harregloMont’ [-Werror=unused-variable]
+   52 |       heapElem harregloMont = pq->heapArray[actual];
+      |                ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5179010
