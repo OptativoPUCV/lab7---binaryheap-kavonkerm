@@ -410,3 +410,22 @@ Wed 10 May 2023 12:54:31 AM UTC:
  tests:  2|2
 total_score: 20/70
 88c10b8
+Wed 10 May 2023 08:52:27 PM UTC: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:52:32: error: incompatible types when initializing type ‘heapElem *’ {aka ‘struct nodo *’} using type ‘heapElem’ {aka ‘struct nodo’}
+   52 |       heapElem *harregloMont = pq->heapArray[actual];
+      |                                ^~
+heap.c:54:28: error: ‘arregloMont’ undeclared (first use in this function); did you mean ‘harregloMont’?
+   54 |       pq->heapArray[max] = arregloMont;
+      |                            ^~~~~~~~~~~
+      |                            harregloMont
+heap.c:54:28: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:52:17: error: unused variable ‘harregloMont’ [-Werror=unused-variable]
+   52 |       heapElem *harregloMont = pq->heapArray[actual];
+      |                 ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6934f0d

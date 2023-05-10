@@ -28,6 +28,7 @@ void heap_push(Heap* pq, void* data, int priority){
   if (pq->size == 0 || pq == NULL){
     return;
   }
+  
 }
 
 
@@ -38,7 +39,7 @@ void heap_pop(Heap* pq){
   pq->heapArray[0] = pq->heapArray[pq->size - 1];
   pq->size--;
 
-  /*int actual = 0;
+  int actual = 0;
   int izq = 1;
   int der = 2;
   int max = izq;
@@ -47,7 +48,7 @@ void heap_pop(Heap* pq){
     if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){
       max = der;
     }
-    if (pq->heapArray[actual].priority > pq->heapArray[max].priority){
+    if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
       heapElem *harregloMont = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[max];
       pq->heapArray[max] = arregloMont;
@@ -60,7 +61,7 @@ void heap_pop(Heap* pq){
   if (pq->size <= pq->capac / 2 && pq->capac > 3) {
     pq->capac /= 2;
     pq->heapArray = realloc(pq->heapArray, pq->capac *sizeof(heapElem));
-  }*/
+  }
 }
 
 Heap* createHeap(){
