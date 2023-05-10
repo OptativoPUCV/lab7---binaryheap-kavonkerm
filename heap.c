@@ -46,13 +46,13 @@ void heap_pop(Heap* pq){
       max = der;
     }
     if (pq->heapArray[actual].priority > pq->heapArray[max].priority){
-      heapElem temp = pq->heapArray[actual];
-      pq->heapArray[] = pq->heapArray[max_child];
-            pq->heapArray[max_child] = temp;
-            current = max_child;
-            left_child = 2 * current + 1;
-            right_child = 2 * current + 2;
-            max_child = left_child;
+      heapElem arregloMont = pq->heapArray[actual];
+      pq->heapArray[actual] = pq->heapArray[max];
+      pq->heapArray[max] = temp;
+      actual = max;
+      izq = 2 * actual + 1;
+      der = 2 * actual + 2;
+      max = izq;
     }
   }
   

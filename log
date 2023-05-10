@@ -348,3 +348,18 @@ heap.c:54:13: error: ‘right_child’ undeclared (first use in this function)
       |             ^~~~~~~~~~~
 Compilation failed
 8bd9fc1
+Wed 10 May 2023 12:12:15 AM UTC: 
+ heap.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:51:28: error: ‘temp’ undeclared (first use in this function)
+   51 |       pq->heapArray[max] = temp;
+      |                            ^~~~
+heap.c:51:28: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:49:16: error: unused variable ‘arregloMont’ [-Werror=unused-variable]
+   49 |       heapElem arregloMont = pq->heapArray[actual];
+      |                ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4bf0e64
