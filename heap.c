@@ -48,15 +48,15 @@ void heap_pop(Heap* pq){
     if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){
       max = der;
     }
-    if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
-      heapElem harregloMont = pq->heapArray[actual];
+    /*if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
+      heapElem arregloMont = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[max];
       pq->heapArray[max] = arregloMont;
       actual = max;
       izq = 2 * actual + 1;
       der = 2 * actual + 2;
       max = izq;
-    }
+    }*/
   }
   if (pq->size <= pq->capac / 2 && pq->capac > 3) {
     pq->capac /= 2;
