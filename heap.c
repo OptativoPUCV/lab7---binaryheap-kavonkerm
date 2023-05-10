@@ -48,7 +48,7 @@ void heap_pop(Heap* pq){
     if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){
       max = der;
     }
-    /*if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
+    if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
       heapElem arregloMont = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[max];
       pq->heapArray[max] = arregloMont;
@@ -56,11 +56,13 @@ void heap_pop(Heap* pq){
       izq = 2 * actual + 1;
       der = 2 * actual + 2;
       max = izq;
-    }*/
+    }else{
+      break;
+    }
   }
   if (pq->size <= pq->capac / 2 && pq->capac > 3) {
     pq->capac /= 2;
-    pq->heapArray = realloc(pq->heapArray, pq->capac *sizeof(heapElem));
+    pq->heapArray = realloc(pq->heapArray,pq->capac *sizeof(heapElem));
   }
 }
 
