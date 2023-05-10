@@ -45,6 +45,15 @@ void heap_pop(Heap* pq){
     if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){
       max = der;
     }
+    if (pq->heapArray[actual].priority > pq->heapArray[max].priority){
+      heapElem temp = pq->heapArray[actual];
+      pq->heapArray[] = pq->heapArray[max_child];
+            pq->heapArray[max_child] = temp;
+            current = max_child;
+            left_child = 2 * current + 1;
+            right_child = 2 * current + 2;
+            max_child = left_child;
+    }
   }
   
 }

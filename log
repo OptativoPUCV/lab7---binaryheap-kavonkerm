@@ -325,3 +325,26 @@ heap.c:39:7: error: unused variable ‘actual’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 e422900
+Wed 10 May 2023 12:10:25 AM UTC: 
+ heap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:50:21: error: expected expression before ‘]’ token
+   50 |       pq->heapArray[] = pq->heapArray[max_child];
+      |                     ^
+heap.c:50:39: error: ‘max_child’ undeclared (first use in this function)
+   50 |       pq->heapArray[] = pq->heapArray[max_child];
+      |                                       ^~~~~~~~~
+heap.c:50:39: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:52:13: error: ‘current’ undeclared (first use in this function)
+   52 |             current = max_child;
+      |             ^~~~~~~
+heap.c:53:13: error: ‘left_child’ undeclared (first use in this function)
+   53 |             left_child = 2 * current + 1;
+      |             ^~~~~~~~~~
+heap.c:54:13: error: ‘right_child’ undeclared (first use in this function)
+   54 |             right_child = 2 * current + 2;
+      |             ^~~~~~~~~~~
+Compilation failed
+8bd9fc1
