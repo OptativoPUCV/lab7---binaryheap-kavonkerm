@@ -48,14 +48,17 @@ void heap_pop(Heap* pq){
     if (pq->heapArray[actual].priority > pq->heapArray[max].priority){
       heapElem arregloMont = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[max];
-      pq->heapArray[max] = temp;
+      pq->heapArray[max] = arregloMont;
       actual = max;
       izq = 2 * actual + 1;
       der = 2 * actual + 2;
       max = izq;
     }
   }
-  
+  if (pq->size <= pq->capacity / 2 && pq->capac > 3) {
+    pq->capac /= 2;
+    pq->heapArray = realloc(pq->heapArray, pq->capac *sizeof(heapElem));
+  }
 }
 
 Heap* createHeap(){
