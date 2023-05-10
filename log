@@ -385,3 +385,16 @@ heap.c:58:23: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘c
       |                       capac
 Compilation failed
 863c192
+Wed 10 May 2023 12:24:53 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:49:31: error: incompatible types when initializing type ‘heapElem *’ {aka ‘struct nodo *’} using type ‘heapElem’ {aka ‘struct nodo’}
+   49 |       heapElem *arregloMont = pq->heapArray[actual];
+      |                               ^~
+heap.c:51:28: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘heapElem *’ {aka ‘struct nodo *’}
+   51 |       pq->heapArray[max] = arregloMont;
+      |                            ^~~~~~~~~~~
+Compilation failed
+14bcb85
