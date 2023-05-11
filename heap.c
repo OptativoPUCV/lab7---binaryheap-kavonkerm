@@ -31,11 +31,11 @@ void heap_push(Heap* pq, void* data, int priority){
   }
   pq->size++;
 
-  while (pq->heapArray[tamanno].priority < pq->heapArray[tamanno - 1].priority){
-    heapElem nodo = pq->heapArray[tamanno];
-    pq->heapArray[tamanno] = pq->heapArray[tamanno - 1];
-    pq->heapArray[tamanno - 1] = nodo;
-    tamanno-= 1;
+  while (pq->heapArray[tamano].priority < pq->heapArray[tamano - 1].priority){
+    heapElem nodo = pq->heapArray[tamano];
+    pq->heapArray[tamano] = pq->heapArray[tamano - 1];
+    pq->heapArray[tamano - 1] = nodo;
+    tamano-= 1;
   }
 
   /*while (tamanno > 0 && pq->heapArray[tamano].priority < pq->heapArray[(tamano - 1) / 2].priority) {
