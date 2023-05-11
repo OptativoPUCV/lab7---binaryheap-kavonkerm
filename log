@@ -754,3 +754,15 @@ heap.c:38:24: error: ‘tamanno’ undeclared (first use in this function); did 
 heap.c:38:24: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 ff0bf74
+Thu 11 May 2023 05:07:40 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:39:23: error: ‘tamanno’ undeclared (first use in this function); did you mean ‘tamano’?
+   39 |     if (pq->heapArray[tamanno].priority > pq->heapArray[padre].priority){
+      |                       ^~~~~~~
+      |                       tamano
+heap.c:39:23: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+f12d07c
