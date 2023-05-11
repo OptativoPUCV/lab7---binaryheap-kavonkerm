@@ -36,33 +36,14 @@ void heap_push(Heap* pq, void* data, int priority){
   int tamano = pq->size;
   int padre = (tamano-1) / 2;
   while (pq->heapArray[tamano].priority > pq->heapArray[padre].priority){
-    if (pq->heapArray[tamano].priority > pq->heapArray[padre].priority){
-      aux = pq->heapArray[tamano];
-      pq->heapArray[tamano] = pq->heapArray[padre];
-      pq->heapArray[padre] = aux;
-      tamano = padre;
-      padre = (tamano-1) / 2;
-    }
-    else{
-      break;
-    }
+    aux = pq->heapArray[tamano];
+    pq->heapArray[tamano] = pq->heapArray[padre];
+    pq->heapArray[padre] = aux;
+    tamano = padre;
+    padre = (tamano-1) / 2;
   }
   pq->size++;
 
-
-  /*while (pq->heapArray[tamano].priority < pq->heapArray[tamano - 1].priority){
-    heapElem nodo = pq->heapArray[tamano];
-    pq->heapArray[tamano] = pq->heapArray[tamano - 1];
-    pq->heapArray[tamano - 1] = nodo;
-    tamano-= 1;
-  }*/
-
-  /*while (tamanno > 0 && pq->heapArray[tamano].priority < pq->heapArray[(tamano - 1) / 2].priority) {
-    heapElem temp = pq->heapArray[tamano];
-    pq->heapArray[tamano] = pq->heapArray[(tamano - 1) / 2];
-    pq->heapArray[(tamano - 1) / 2] = temp;
-    tamano = (tamano - 1) / 2;
-  }*/
 }
 
 void heap_pop(Heap* pq){
