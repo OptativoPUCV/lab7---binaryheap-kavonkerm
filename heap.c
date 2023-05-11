@@ -28,16 +28,18 @@ void heap_push(Heap* pq, void* data, int priority){
   //pq->heapArray[i].data = data;
   //pq->heapArray[i].priority = priority;
   //pq->size++;
+  if (pq->size == pq->capac) {
+    int nueva_Capacidad = (pq->capac * 2) + 1;
+    pq->heapArray = realloc(pq->heapArray, nueva_Capacidad);
+  }
+
   while (i > 0 && pq->heapArray[i].priority < pq->heapArray[(i - 1) / 2].priority) {
     heapElem temp = pq->heapArray[i];
     pq->heapArray[i] = pq->heapArray[(i - 1) / 2];
     pq->heapArray[(i - 1) / 2] = temp;
     i = (i - 1) / 2;
   }
-  if (pq->size == pq->capac) {
-    int nueva_Capacidad = (pq->capac * 2) + 1;
-    pq->heapArray = realloc(pq->heapArray, nueva_Capacidad);
-  }
+  
   pq->size++;
 }
 
