@@ -36,7 +36,6 @@ void heap_push(Heap* pq, void* data, int priority){
   }
   if (pq->size == pq->capac) {
     int nueva_Capacidad = (pq->capac * 2) + 1;
-    //pq->capac = (pq->capac == 0) ? 1 : pq->capac * 2;
     pq->heapArray = realloc(pq->heapArray, nueva_Capacidad);
   }
 }
@@ -83,3 +82,5 @@ Heap* createHeap(){
   
   return mont;
 }
+//pq->capac = (pq->capac == 0) ? 1 : pq->capac * 2;
+
