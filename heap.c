@@ -38,6 +38,7 @@ void heap_push(Heap* pq, void* data, int priority){
     int nueva_Capacidad = (pq->capac * 2) + 1;
     pq->heapArray = realloc(pq->heapArray, nueva_Capacidad);
   }
+  pq->size++;
 }
 
 void heap_pop(Heap* pq){
