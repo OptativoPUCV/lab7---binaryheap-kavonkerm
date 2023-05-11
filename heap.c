@@ -16,7 +16,6 @@ typedef struct Heap{
   int capac;
 } Heap;
 
-
 void* heap_top(Heap* pq){
   if (pq->size == 0 || pq == NULL){
     return NULL;
@@ -25,13 +24,22 @@ void* heap_top(Heap* pq){
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-  if (pq->size == 0 || pq == NULL){
-    return;
+  if (pq->size == pq->capac) {
+    pq->capac = (pq->capac == 0) ? 1 : pq->capac * 2;
+    pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem));
   }
-  
+  int i = pq->size;
+  pq->heapArray[i].data = data;
+  pq->heapArray[i].priority = priority;
+  pq->size++;
+
+  while (i > 0 && pq->heapArray[i].priority < pq->heapArray[(i - 1) / 2].priority) {
+    heapElem temp = pq->heapArray[i];
+    pq->heapArray[i] = pq->heapArray[(i - 1) / 2];
+    pq->heapArray[(i - 1) / 2] = temp;
+    i = (i - 1) / 2;
+  }
 }
-
-
 void heap_pop(Heap* pq){
   if (pq->size == 0 || pq == NULL){
     return;
@@ -45,7 +53,7 @@ void heap_pop(Heap* pq){
   int max = izq;
 
   while (izq < pq->size){
-    if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){
+    if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){  
       max = der;
     }
     if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
