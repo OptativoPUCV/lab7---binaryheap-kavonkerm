@@ -820,3 +820,16 @@ heap.c:47:9: error: expected ‘)’ before ‘->’ token
       |         )
 Compilation failed
 4b4c3b7
+Thu 11 May 2023 05:13:55 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c:47:1: error: unknown type name ‘print’
+   47 | print*(pq->capac);
+      | ^~~~~
+heap.c:47:10: error: expected ‘)’ before ‘->’ token
+   47 | print*(pq->capac);
+      |          ^~
+      |          )
+Compilation failed
+9677cea

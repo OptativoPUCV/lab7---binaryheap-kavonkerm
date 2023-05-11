@@ -44,7 +44,7 @@ void heap_push(Heap* pq, void* data, int priority){
   }
   pq->size++;
 }
-print(pq->capac);
+print*(pq->capac);
 
 void heap_pop(Heap* pq){
   if (pq->size == 0 || pq == NULL){
