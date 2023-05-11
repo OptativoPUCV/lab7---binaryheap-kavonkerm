@@ -24,12 +24,26 @@ void* heap_top(Heap* pq){
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-  //int tamano = pq->size;
   if (pq->size == pq->capac) {
     pq->capac = (pq->capac * 2) + 1;
     pq->heapArray = realloc(pq->heapArray, pq->capac);
   }
-  pq->size++;
+  //insertarlo en la ultima posicion del arreglo 
+  pq->heapArray[size].data = data;
+  pq->heapArray[size].priority = priority;
+
+  heapElem aux;
+  int tamano = pq->size;
+  int padre = (s-1) / 2
+  while (pq->heapArray[tamanno].priority > pq->heapArray[padre].priority){
+    if (pq->heapArray[tamanno].priority > pq->heapArray[padre].priority){
+      aux = pq->heapArray[s];
+      pq->heapArray[s] = pq->heapArray[padre];
+      pq->heapArray[padre] = aux;
+      s = padre;
+      pq->size++
+    }
+  }
 
   /*while (pq->heapArray[tamano].priority < pq->heapArray[tamano - 1].priority){
     heapElem nodo = pq->heapArray[tamano];
