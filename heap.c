@@ -42,8 +42,8 @@ void heap_push(Heap* pq, void* data, int priority){
     heapElem temp = pq->heapArray[tamano];
     pq->heapArray[tamano] = pq->heapArray[(tamano - 1) / 2];
     pq->heapArray[(tamano - 1) / 2] = temp;
-    tamano = (tamano - 1) / 2;*/
-  }
+    tamano = (tamano - 1) / 2;
+  }*/
 }
 
 void heap_pop(Heap* pq){
