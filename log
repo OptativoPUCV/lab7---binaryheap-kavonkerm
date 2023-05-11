@@ -766,3 +766,9 @@ heap.c:39:23: error: ‘tamanno’ undeclared (first use in this function); did 
 heap.c:39:23: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 f12d07c
+Thu 11 May 2023 05:07:44 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  3|1
+total_score: 45/70
+3463f5e
