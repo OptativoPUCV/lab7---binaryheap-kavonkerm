@@ -833,3 +833,25 @@ heap.c:47:10: error: expected ‘)’ before ‘->’ token
       |          )
 Compilation failed
 9677cea
+Thu 11 May 2023 05:14:12 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:31:12: error: passing argument 1 of ‘printf’ makes pointer from integer without a cast [-Werror=int-conversion]
+   31 |   printf(pq->capac);
+      |          ~~^~~~~~~
+      |            |
+      |            int
+In file included from /nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdio.h:866,
+                 from test.c:1:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/bits/stdio2.h:110:32: note: expected ‘const char * restrict’ but argument is of type ‘int’
+  110 | printf (const char *__restrict __fmt, ...)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from test.c:4:
+heap.c:31:3: error: format not a string literal and no format arguments [-Werror=format-security]
+   31 |   printf(pq->capac);
+      |   ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7f919a8
