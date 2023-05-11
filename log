@@ -802,3 +802,11 @@ heap.c:46:3: error: implicit declaration of function ‘print’; did you mean �
 cc1: all warnings being treated as errors
 Compilation failed
 d719fe0
+Thu 11 May 2023 05:13:28 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+/nix/store/v8imx1nvyz0hgvx9cbcmh6gp4ngw3ffj-binutils-2.35.1/bin/ld: /tmp/ccOW34Pc.o: in function `heap_push':
+test.c:(.text+0xc5): undefined reference to `lrint'
+collect2: error: ld returned 1 exit status
+Compilation failed
+c4ea46a
