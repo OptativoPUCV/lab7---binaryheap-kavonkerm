@@ -46,8 +46,9 @@ void heap_push(Heap* pq, void* data, int priority){
     else{
       break;
     }
-    pq->size++;
   }
+  pq->size++;
+
 
   /*while (pq->heapArray[tamano].priority < pq->heapArray[tamano - 1].priority){
     heapElem nodo = pq->heapArray[tamano];
