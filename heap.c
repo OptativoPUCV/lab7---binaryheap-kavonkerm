@@ -35,7 +35,7 @@ void heap_push(Heap* pq, void* data, int priority){
   heapElem aux;
   int tamano = pq->size;
   int padre = (tamano-1) / 2;
-  while (pq->heapArray[tamano].priority > pq->heapArray[padre].priority){
+  while ((pq->heapArray[tamano].priority) > (pq->heapArray[padre].priority)){
     aux = pq->heapArray[tamano];
     pq->heapArray[tamano] = pq->heapArray[padre];
     pq->heapArray[padre] = aux;
@@ -43,7 +43,6 @@ void heap_push(Heap* pq, void* data, int priority){
     padre = (tamano-1) / 2;
   }
   pq->size++;
-
 }
 
 void heap_pop(Heap* pq){
