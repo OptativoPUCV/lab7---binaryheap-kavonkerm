@@ -24,7 +24,7 @@ void* heap_top(Heap* pq){
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-  int tamano = pq->size;
+  //int tamano = pq->size;
   if (pq->size == pq->capac) {
     pq->capac = (pq->capac * 2) + 1;
     pq->heapArray = realloc(pq->heapArray, pq->capac);
