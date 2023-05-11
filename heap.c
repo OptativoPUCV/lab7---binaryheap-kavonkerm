@@ -53,7 +53,7 @@ void heap_pop(Heap* pq){
   int max = izq;
 
   while (izq < pq->size){
-    if (der < pq->size && pq->heapArray[der].priority > pq->heapArray[izq].priority){  
+    if (der < pq->size && pq->heapArray[der].priority < pq->heapArray[izq].priority){  
       max = der;
     }
     if (pq->heapArray[actual].priority < pq->heapArray[max].priority){
