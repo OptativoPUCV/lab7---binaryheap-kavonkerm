@@ -28,7 +28,6 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->capac = (pq->capac * 2) + 1;
     pq->heapArray = realloc(pq->heapArray, pq->capac);
   }
-  pq->size++;
   //insertarlo en la ultima posicion del arreglo 
   pq->heapArray[pq->size].data = data;
   pq->heapArray[pq->size].priority = priority;
@@ -43,6 +42,7 @@ void heap_push(Heap* pq, void* data, int priority){
     tamano = padre;
     padre = (tamano-1) / 2;
   }
+  pq->size++;
 }
 
 void heap_pop(Heap* pq){
