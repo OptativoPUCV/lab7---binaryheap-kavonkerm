@@ -43,6 +43,7 @@ void heap_push(Heap* pq, void* data, int priority){
     padre = (tamano-1) / 2;
   }
   pq->size++;
+  print(pq->capac);
 }
 
 void heap_pop(Heap* pq){

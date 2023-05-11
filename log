@@ -790,3 +790,15 @@ Thu 11 May 2023 05:10:55 PM UTC:
  tests:  7|1
 total_score: 60/70
 be3bc6b
+Thu 11 May 2023 05:13:22 PM UTC: 
+ heap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:46:3: error: implicit declaration of function ‘print’; did you mean ‘lrint’? [-Werror=implicit-function-declaration]
+   46 |   print(pq->capac);
+      |   ^~~~~
+      |   lrint
+cc1: all warnings being treated as errors
+Compilation failed
+d719fe0
