@@ -703,3 +703,27 @@ heap.c:35:12: error: unused variable ‘aux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 2806409
+Thu 11 May 2023 05:07:19 PM UTC: 
+ heap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:37:16: error: ‘s’ undeclared (first use in this function)
+   37 |   int padre = (s-1) / 2
+      |                ^
+heap.c:37:16: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:38:3: error: expected ‘,’ or ‘;’ before ‘while’
+   38 |   while (pq->heapArray[tamanno].priority > pq->heapArray[padre].priority){
+      |   ^~~~~
+heap.c:37:7: error: unused variable ‘padre’ [-Werror=unused-variable]
+   37 |   int padre = (s-1) / 2
+      |       ^~~~~
+heap.c:36:7: error: unused variable ‘tamano’ [-Werror=unused-variable]
+   36 |   int tamano = pq->size;
+      |       ^~~~~~
+heap.c:35:12: error: unused variable ‘aux’ [-Werror=unused-variable]
+   35 |   heapElem aux;
+      |            ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+52567a9
