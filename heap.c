@@ -26,7 +26,7 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
   if (pq->size == pq->capac) {
     pq->capac = (pq->capac * 2) + 1;
-    pq->heapArray = realloc(pq->heapArray, pq->capac);
+    pq->heapArray = (heapElem*) realloc(pq->heapArray, pq->capac);
   }
   //insertarlo en la ultima posicion del arreglo 
   pq->heapArray[pq->size].data = data;
@@ -35,12 +35,14 @@ void heap_push(Heap* pq, void* data, int priority){
   heapElem aux;
   int tamano = pq->size;
   int padre = (tamano-1) / 2;
+
+  //comparar el elemento a insertar con el padre segun la prioridad
   while ((pq->heapArray[tamano].priority) > (pq->heapArray[padre].priority)){
     aux = pq->heapArray[tamano];
     pq->heapArray[tamano] = pq->heapArray[padre];
     pq->heapArray[padre] = aux;
     tamano = padre;
-    padre = (tamano-1) / 2;
+    padre = (tamano - 1) / 2;
   }
   pq->size++;
 }
